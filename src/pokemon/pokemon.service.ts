@@ -62,12 +62,9 @@ export class PokemonService {
         return new NotFoundException(`Pokemon "${term}" not found`)
     }
 
-    
-
     if (pokemon.name) {
       pokemon.name = pokemon.name.toLowerCase();
     }
-    
     
       try {
         await pokemon.updateOne(updatePokemonDto, {new: true})
